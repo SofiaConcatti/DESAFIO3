@@ -1,0 +1,15 @@
+.btn {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  font-weight: bold;
+  border: 1px double white;
+}
+.btn:hover {
+  background-color: green;
+}
+#contenido {
+  position: relative;
+}
+ul {
+  display: inline-block;
+}

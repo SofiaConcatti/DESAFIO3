@@ -1,0 +1,145 @@
+<div class="row" id="contenido">
+  <div id="contenedor" class="col-md-6">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="">
+      <div class="">
+        <label for="inputEmail4" class="label"
+          >Ingresa tu dirección de email:</label
+        ><br />
+        <input
+          type="email"
+          class="email"
+          id="inputEmail4"
+          placeholder="Ej:
+      LuisS@gmail.com"
+          formControlName="email"
+        />
+        <div
+          *ngIf="
+            myForm.controls['email']?.invalid &&
+            (myForm.controls['email']?.dirty ||
+              myForm.controls['email']?.touched)
+          "
+          class=""
+        >
+          <div *ngIf="myForm.controls['email']?.errors?.['required']">
+            Email es requerido.
+          </div>
+          <div *ngIf="myForm.controls['email']?.errors?.['email']">
+            Email inválido.
+          </div>
+        </div>
+
+        <div class="">
+          <label for="inputPassword4" class="label">Contraseña</label><br />
+          <input
+            type="password"
+            class="password"
+            id="inputPassword4"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <div
+            *ngIf="
+              myForm.controls['password'].invalid &&
+              (myForm.controls['password'].dirty ||
+                myForm.controls['password'].touched)
+            "
+            class=""
+          >
+            <div *ngIf="myForm.controls['password'].errors?.['required']">
+              Contraseña es requerida.
+            </div>
+            <div *ngIf="myForm.controls['password'].errors?.['minlength']">
+              Contraseña debe tener al menos 6 caracteres.
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <label for="inputAddress" class="label">Ingresa tu dirección</label
+          ><br />
+          <input
+            type="text"
+            class="adress"
+            id="inputAddress"
+            placeholder="Ejemplo: 1234 Main St"
+            formControlName="address"
+          />
+          <div
+            *ngIf="
+              myForm.controls['address'].invalid &&
+              (myForm.controls['address'].dirty ||
+                myForm.controls['address'].touched)
+            "
+            class=""
+          >
+            <div *ngIf="myForm.controls['address'].errors?.['required']">
+              Dirección es requerida.
+            </div>
+            <div *ngIf="myForm.controls['address'].errors?.['pattern']">
+              Dirección debe tener un formato válido.
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <label for="inputState" class="label">Provincia</label><br />
+          <select id="inputState" class="state" formControlName="province">
+            <option value="" selected>Selecciona una opción</option>
+            <option value="Buenos Aires">Buenos Aires</option>
+            <option value="Córdoba">Córdoba</option>
+            <option value="Santa Fe">Santa Fe</option>
+            <option value="Santa Fe">Mendoza</option>
+          </select>
+          <div
+            *ngIf="
+              myForm.controls['province'].invalid &&
+              (myForm.controls['province'].dirty ||
+                myForm.controls['province'].touched)
+            "
+            class=""
+          >
+            <div *ngIf="myForm.controls['province'].errors?.['required']">
+              Provincia es requerida.
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <label for="inputCity" class="label">Ciudad</label><br />
+          <input
+            type="text"
+            class="city"
+            id="inputCity"
+            placeholder="Ej: Godoy Cruz"
+            formControlName="city"
+          />
+          <div
+            *ngIf="
+              myForm.controls['city'].invalid &&
+              (myForm.controls['city'].dirty || myForm.controls['city'].touched)
+            "
+            class=""
+          >
+            <div *ngIf="myForm.controls['city'].errors?.['required']">
+              Ciudad es requerida.
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <label for="inputZip" class="label">Codigo Postal</label><br />
+          <input
+            type="text"
+            class="zip"
+            id="inputZip"
+            placeholder="Ej: M5577"
+          />
+        </div>
+        <br />
+        <div class="register">
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

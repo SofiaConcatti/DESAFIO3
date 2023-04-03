@@ -1,0 +1,13 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+#contenedor {
+  margin-top: 41px;
+  background-color: rgb(232, 231, 231);
+}
+#Titulos {
+  padding-top: 10px;
+}
+#Titulos h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}

@@ -1,0 +1,12 @@
+<div class="col-md-6" id="contenido">
+  <div class="">
+    <button type="submit" class="btn btn-primary" (click)="mostrarAlumnos()">
+      Alumnos registrados
+    </button>
+  </div>
+  <ul *ngIf="mostrarLista">
+    <li *ngFor="let alumno of alumnos">
+      {{ alumno.nombre }} {{ alumno.apellido }}
+    </li>
+  </ul>
+</div>
